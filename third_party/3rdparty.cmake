@@ -14,10 +14,20 @@ set(GLFW_INCLUDE ${CMAKE_SOURCE_DIR}/third_party/glfw/include)
 set(GLFW_DEFINITIONS -DGLFW_INCLUDE_NONE)
 set(GLFW_LIB ${GLFW_LIBRARIES} glfw)
 
+# sdl2
+option(SDL2_DISABLE_INSTALL ON)
+option(SDL2_DISABLE_UNINSTALL ON)
+set(SDL_SHARED ON)
+set(SDL_STATIC OFF)
+add_subdirectory( ${CMAKE_SOURCE_DIR}/third_party/sdl2)
+set(SDL2_INCLUDE ${CMAKE_SOURCE_DIR}/third_party/sdl2/include)
+
+
 # imgui
 file(GLOB imgui_impl
         ${IMGUI_PATH}/*.cpp
         ${IMGUI_PATH}/backends/imgui_impl_glfw.cpp
+        ${IMGUI_PATH}/backends/imgui_impl_sdl.cpp
         ${IMGUI_PATH}/backends/imgui_impl_opengl3.cpp
         )
-add_library(imgui_lib STATIC ${imgui_impl})
+add_library(IMGUI_LIB STATIC ${imgui_impl})
