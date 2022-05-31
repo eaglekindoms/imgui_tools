@@ -4,4 +4,4 @@
 /.vscode/
 /third_party/imgui/examples/
 /third_party/imgui/docs/
-/third_party/glfw/docs/
+/third_party/glfw/
