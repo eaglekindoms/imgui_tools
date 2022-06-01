@@ -3,9 +3,9 @@
 // (GLFW is a cross-platform general purpose library for handling windows, inputs, OpenGL/Vulkan/Metal graphics context creation, etc.)
 #pragma comment( linker, "/subsystem:windows /entry:mainCRTStartup" )
 
-#include <imgui.h>
-#include <imgui_impl_glfw.h>
-#include <imgui_impl_opengl3.h>
+#include "imgui.h"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
 #include <stdio.h>
 
 // About Desktop OpenGL function loaders:
@@ -17,7 +17,7 @@
 #endif
 
 // Include glfw3.h after our OpenGL definitions
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
 
 // [Win32] Our example includes a copy of glfw3.lib pre-compiled with VS2010 to maximize ease of testing and compatibility with old VS compilers.
 // To link with VS2010-era libraries, VS2015+ requires linking with legacy_stdio_definitions.lib, which we do using this pragma.
